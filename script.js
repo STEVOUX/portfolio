@@ -75,8 +75,44 @@ if (!isTouchDevice) {
       gsap.to(cursorFollower, { scale: 1, backgroundColor: 'transparent', borderColor: 'rgba(255, 255, 255, 0.4)', duration: 0.3 });
       if(ambientGlow) gsap.to(ambientGlow, { opacity: 1, scale: 1, duration: 0.5 });
     });
+    });
   });
-} // End of if(!isTouchDevice)
+} else {
+  // --- MOBILE SPECIFIC EFFECTS ---
+  
+  // 1. Mobile Ambient Glow Orbit
+  const ambientGlow = document.getElementById('ambient-glow');
+  if (ambientGlow) {
+    // Make the glow follow a random complex orbit
+    gsap.to(ambientGlow, {
+      x: () => Math.random() * (window.innerWidth - 300),
+      y: () => Math.random() * (window.innerHeight - 300),
+      duration: 8,
+      ease: 'sine.inOut',
+      repeat: -1,
+      yoyo: true,
+      onRepeat: function() {
+        gsap.to(ambientGlow, {
+          x: () => Math.random() * (window.innerWidth - 300),
+          y: () => Math.random() * (window.innerHeight - 300),
+          duration: 8,
+          ease: 'sine.inOut'
+        });
+      }
+    });
+  }
+
+  // 2. Touch-Based Triggers for Buttons (Pulse Effect)
+  const interactiveElements = document.querySelectorAll('a, button, [data-interactive]');
+  interactiveElements.forEach(el => {
+    el.addEventListener('touchstart', () => {
+      gsap.to(el, { scale: 0.95, duration: 0.1, ease: 'power2.out' });
+    });
+    el.addEventListener('touchend', () => {
+      gsap.to(el, { scale: 1, duration: 0.4, ease: 'elastic.out(1, 0.3)' });
+    });
+  });
+} // End of isTouchDevice logic
 
 // Navigation Menu Logic
 const menuToggle = document.querySelector('.menu-toggle');
@@ -413,6 +449,25 @@ if (skillsRing) {
     item.appendChild(iconWrapper);
     skillsRing.appendChild(item);
   });
+
+  // 3. Auto-Rotating Skills Ring for Mobile
+  if (isTouchDevice) {
+    gsap.to(skillsRing, {
+      rotation: 360,
+      duration: 25,
+      ease: "none",
+      repeat: -1
+    });
+    
+    // Counter-rotate the items so they stay upright
+    const items = skillsRing.querySelectorAll('.skill-item');
+    gsap.to(items, {
+      rotation: -360,
+      duration: 25,
+      ease: "none",
+      repeat: -1
+    });
+  }
 }
 
 // Update positions on resize
