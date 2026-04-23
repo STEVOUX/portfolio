@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WORKS | Steve Shine</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- GSAP & Lenis -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+</head>
+<body>
+
+  <!-- Global Premium Background Layer -->
+  <div class="global-bg">
+    <div class="global-glow"></div>
+    <div class="ambient-glow" id="ambient-glow"></div>
+  </div>
+  
+  <!-- Noise Overlay (Must be top layer) -->
+  <div class="noise-bg"></div>
+
+  <!-- Page Transition Curtain -->
+  <div class="page-transition"></div>
+
+  <!-- Magnetic Cursor -->
+  <div class="cursor-follower"></div>
+  <div class="cursor-dot"></div>
+
+  <!-- Header & Menu Toggle -->
+  <header class="header">
+    <a href="index.html" class="logo" data-interactive>STEVOUX</a>
+    <button class="menu-toggle" data-interactive>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Fullscreen Navigation -->
+  <nav class="nav-overlay">
+    <div class="nav-content">
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link" data-interactive>Home</a></li>
+        <li><a href="works.html" class="nav-link" data-interactive>Works</a></li>
+        <li><a href="ventures.html" class="nav-link" data-interactive>Ventures</a></li>
+        <li><a href="contact.html" class="nav-link" data-interactive>Contact</a></li>
+      </ul>
+      <div class="nav-footer">
+        <a href="#" class="social-link" data-interactive>Twitter</a>
+        <a href="#" class="social-link" data-interactive>LinkedIn</a>
+        <a href="#" class="social-link" data-interactive>GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Wrapper -->
+  <main id="main-content">
+    
+    <div class="horizontal-wrapper">
+      <div class="horizontal-container">
+        
+        <!-- Intro Slide -->
+        <section class="horizontal-panel intro-panel">
+          <div class="container">
+            <h1 class="section-title left-align">SELECTED <span>WORKS</span></h1>
+            <p class="section-desc">A cross-disciplinary journey spanning Web Architecture, Unreal Engine 5 Game Development, Advanced 3D Modeling, and Cinematic Video Editing.</p>
+            
+            <div class="scroll-indicator horizontal-indicator">
+              <span>Scroll to navigate</span>
+              <div class="line horizontal"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Web Dev Slide -->
+        <section class="horizontal-panel work-panel">
+          <div class="work-content">
+            <div class="work-number">01</div>
+            <h2 class="work-title">Web <br>Development</h2>
+            <p class="work-desc">Architecting robust, scalable, and visually stunning digital platforms. Full-stack expertise tailored for enterprise-grade performance.</p>
+            <ul class="work-tags">
+              <li>React / Next.js</li>
+              <li>Node.js</li>
+              <li>MongoDB</li>
+            </ul>
+          </div>
+          <div class="work-visual glass">
+            <div class="work-image-placeholder">WEB PROJECT SHOWCASE</div>
+          </div>
+        </section>
+
+        <!-- Game Dev Slide -->
+        <section class="horizontal-panel work-panel">
+          <div class="work-content">
+            <div class="work-number">02</div>
+            <h2 class="work-title">UE5 Game <br>Development</h2>
+            <p class="work-desc">Pushing the boundaries of interactive entertainment with Unreal Engine 5. Creating photorealistic environments and complex gameplay systems.</p>
+            <ul class="work-tags">
+              <li>Blueprints</li>
+              <li>C++</li>
+              <li>Lumen / Nanite</li>
+            </ul>
+          </div>
+          <div class="work-visual glass">
+            <div class="work-image-placeholder">UE5 PROJECT SHOWCASE</div>
+          </div>
+        </section>
+
+        <!-- 3D Modeling Slide -->
+        <section class="horizontal-panel work-panel">
+          <div class="work-content">
+            <div class="work-number">03</div>
+            <h2 class="work-title">3D <br>Modeling</h2>
+            <p class="work-desc">Crafting high-fidelity assets, characters, and environments using Blender. Specializing in hard-surface and organic modeling.</p>
+            <ul class="work-tags">
+              <li>Blender</li>
+              <li>ZBrush</li>
+              <li>Substance Painter</li>
+            </ul>
+          </div>
+          <div class="work-visual glass">
+            <div class="work-image-placeholder">3D ASSET SHOWCASE</div>
+          </div>
+        </section>
+
+        <!-- Video Editing Slide -->
+        <section class="horizontal-panel work-panel">
+          <div class="work-content">
+            <div class="work-number">04</div>
+            <h2 class="work-title">Cinematic <br>Editing</h2>
+            <p class="work-desc">Transforming raw footage into compelling narratives. Expert color grading, VFX integration, and dynamic sound design.</p>
+            <ul class="work-tags">
+              <li>Premiere Pro</li>
+              <li>After Effects</li>
+              <li>DaVinci Resolve</li>
+            </ul>
+          </div>
+          <div class="work-visual glass">
+            <div class="work-image-placeholder">VIDEO REEL SHOWCASE</div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
